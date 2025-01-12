@@ -1,0 +1,46 @@
+{
+  "name": "@ehsaneha/react-observable-store",
+  "version": "1.0.0",
+  "description": "`@ehsaneha/react-observable-store` is an extension of the `@ehsaneha/observable-store` library specifically tailored for React applications inspired by `zustand` library.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehsaneha/react-observable-store.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@types/lodash.isequal": "^4.5.8",
+    "@types/react": "^19.0.4",
+    "@types/react-dom": "^19.0.2",
+    "typescript": "^4.9.5"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "React",
+    "Observable Store",
+    "State Management",
+    "Zustand"
+  ],
+  "author": "ehsaneha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ehsaneha/react-observable-store/issues"
+  },
+  "homepage": "https://github.com/ehsaneha/react-observable-store#readme",
+  "dependencies": {
+    "@ehsaneha/observable-store": "^1.0.0",
+    "@ehsaneha/utils": "^1.0.0",
+    "lodash.isequal": "^4.5.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  }
+}
