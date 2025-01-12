@@ -1,7 +1,7 @@
 {
   "name": "@ehsaneha/react-observable-store",
   "version": "1.0.0",
-  "description": "`@ehsaneha/react-observable-store` is an extension of the `@ehsaneha/observable-store` library specifically tailored for React applications inspired by `zustand` library.",
+  "description": "This is an extension of the `@ehsaneha/observable-store` library specifically tailored for React applications inspired by `zustand` library.",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
