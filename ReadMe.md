@@ -138,39 +138,40 @@ In the above example:
 
 - The `useState` hook binds the store state to the component’s local state.
 - `store.onChange` is used to log state changes in the console, acting as an observer.
+- In this way the store is global and maintains the same state throughout the app.
 
 ### Example: Scoped Counter Store using React Provider
 
 ```tsx
 import React from "react";
-import { createStore } from "@ehsaneha/react-observable-store";
+import { createStore, Store } from "@ehsaneha/react-observable-store";
 
-type ContextType = {
+type StoreContextType = {
   store: Store<number>;
   // Or if you have extra actions
   // store: Store<number, { increment: () => void; decrement: () => void }>;
 };
 
-const Context = React.createContext({} as ContextType);
+const StoreContext = React.createContext({} as ContextType);
 
-function Provider({ children }: { children: React.ReactNode }) {
+function StoreProvider({ children }: { children: React.ReactNode }) {
   const store = createStore(0);
 
   return (
-    <FormContext.Provider value={{ store }}>{children}</FormContext.Provider>
+    <StoreContext.Provider value={{ store }}>{children}</StoreContext.Provider>
   );
 }
 
 const ParentComponent = () => {
   return (
-    <Provider>
+    <StoreProvider>
       <CounterComponent />
-    </Provider>
+    </StoreProvider>
   );
 };
 
 const CounterComponent = () => {
-  const { store } = React.useContext(Context); // Consuming the provider
+  const { store } = React.useContext(StoreContext); // Consuming the StoreProvider
   const [state] = store.useState();
 
   return ( ... );
@@ -179,8 +180,8 @@ const CounterComponent = () => {
 
 In the above example:
 
-- The `useState` hook binds the store state to the component’s local state.
-- `store.onChange` is used to log state changes in the console, acting as an observer.
+- We used `React.createContext` to create a Provider to have a scoped store and then consumed it in a child component.
+- By using this method every time you use the `StoreProvider` you will have a separate store which has its own state.
 
 ### API
 
