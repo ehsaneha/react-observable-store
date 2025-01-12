@@ -152,7 +152,7 @@ type StoreContextType = {
   // store: Store<number, { increment: () => void; decrement: () => void }>;
 };
 
-const StoreContext = React.createContext({} as ContextType);
+const StoreContext = React.createContext({} as StoreContextType);
 
 function StoreProvider({ children }: { children: React.ReactNode }) {
   const store = createStore(0);
@@ -181,7 +181,7 @@ const CounterComponent = () => {
 In the above example:
 
 - We used `React.createContext` to create a Provider to have a scoped store and then consumed it in a child component.
-- By using this method every time you use the `StoreProvider` you will have a separate store which has its own state.
+- By using this method every time we use the `StoreProvider` we will have a separate store which has its own state.
 
 ### API
 
